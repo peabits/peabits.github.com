@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <!-- 引入组件库 -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+
+    <!-- <link rel="stylesheet" href="./index.css" /> -->
+    <!-- <script src="index.js" async></script> -->
+</head>
+
+<body>
+    <div id="app">
+        <el-container>
+            <el-main>
+                <el-card :class=" activate==i ? 'el-card-selected' : '' " v-for="i of 10">
+                    <div :class="'el-label-'+i%2"><label>label</label></div>
+                    <div>
+                        <ul>
+                            <li v-for="j of 2">{{i}}-{{j}}</li>
+                        </ul>
+                    </div>
+                </el-card>
+            </el-main>
+        </el-container>
+    </div>
+</body>
+
+
+<script>
+    
+new Vue({
+    el: "#app",
+    data() {
+        return {
+            activate: 4
+        }
+    },
+})
+
+</script>
+
+<style>
+
+.el-main {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+
+.el-card {
+    display: inline-block;
+    margin: 10px;
+    width: 200px;
+    background-color:lightgray;
+    position: relative;
+}
+
+.el-card-selected {
+    background-color: darkgrey;
+    font-weight: bold;
+}
+
+.el-label-0 {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    padding: 5px;
+    background-color: rgb(172, 160, 160);
+}
+
+.el-label-1 {
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    padding: 5px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+    border-radius: 10px;
+}
+
+</style>
+
+
+
+
+
+
+
+</html>

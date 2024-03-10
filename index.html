@@ -1,67 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello World</title>
-    <script
-      crossorigin
-      src="https://unpkg.com/react@18/umd/react.production.min.js"
-    ></script>
-    <script
-      crossorigin
-      src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
-    ></script>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-  </head>
+</head>
 
-  <body>
+<body>
     <div id="root"></div>
-    <script type="text/babel">
-      function HelloWorld() {
-        const items = [
-          "مرحبا بالعالم!",
-          "你好，世界！",
-          "Hello, world!",
-          "Bonjour le monde!",
-          "Привет, мир!",
-          "¡Hola Mundo!",
-          "ハロー・ワールド",
-          "세상아, 안녕!",
-        ];
-        const listItems = items.map((item, index) => (
-          <div class="item" key={index}>
-            {item}
-          </div>
-        ));
-        return <div class="list">{listItems}</div>;
-      }
-      const root = ReactDOM.createRoot(document.getElementById("root"));
-      root.render(<HelloWorld />);
-    </script>
-
-    <style>
-      #root {
-        height: 100%;
-      }
-      #root .list {
-        margin: 10rem auto;
-      }
-
-      #root .list > .item {
-        width: fit-content;
-        margin: 1rem auto;
-        text-align: center;
-        transition: all 1s;
-      }
-
-      #root .list > .item:hover {
-        cursor: pointer;
-        margin: 2rem auto;
-        font-weight: bold;
-        font-size: 1.5rem;
-      }
-    </style>
-  </body>
+</body>
+<script type="text/babel">
+    function Hello(props) {
+        return (
+            <div>Hello {props.toWhat}</div>
+        );
+    }
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<Hello toWhat="World" />);
+</script>
 </html>
